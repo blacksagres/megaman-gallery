@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as PIXI from "pixi.js";
 
 // https://www.piskelapp.com/p/agxzfnBpc2tlbC1hcHByEwsSBlBpc2tlbBiAgKC9_OjjCQw/edit
@@ -9,14 +9,19 @@ export default function MainCanvas() {
       width: window.innerWidth,
     })
   );
+  const [loopAnimation, setLoopAnimation] = useState(false);
+  const mmxStartStageAnimation = useRef(null);
+  
 
-  // https://pixijs.io/examples/index.html?s=basics&f=spritesheet.js&title=SpriteSheet%20Animation#/sprite/animatedsprite-jet.js
-  const createMegamanSheet = () => {
+  const doneLoading = (loopAnimation) => {
+    
+    // https://www.youtube.com/watch?v=GKre-3pBQac
+    // https://www.html5gamedevs.com/topic/25619-is-this-an-efficient-way-to-load-sprites/
+    
     const frames = [];
 
     for (var i = 0; i <= 12; i++) {
       // magically works since the spritesheet was loaded with the pixi loader
-      console.log(PIXI.Texture.from("megaman-x-start-stage" + i + ".png"));
       frames.push(PIXI.Texture.from("megaman-x-start-stage" + i + ".png"));
     }
 
@@ -37,14 +42,15 @@ export default function MainCanvas() {
     sectionSprite.buttonMode = true;
     sectionSprite.interactive = true;
 
+    mmxStartStageAnimation.current = sectionSprite;
     sectionSprite.play();
   };
 
-  const doneLoading = () => {
-    // https://www.youtube.com/watch?v=GKre-3pBQac
-    // https://www.html5gamedevs.com/topic/25619-is-this-an-efficient-way-to-load-sprites/
-    createMegamanSheet();
-  };
+  useEffect(() => {
+    if(!mmxStartStageAnimation.current) return;
+    mmxStartStageAnimation.current.loop = loopAnimation;
+    mmxStartStageAnimation.current.play();
+  }, [loopAnimation])
 
   useEffect(() => {
     app.loader.add("../sprites/megaman-x/megaman-x-start-stage.json");
@@ -59,8 +65,13 @@ export default function MainCanvas() {
   return (
     <>
       <div id="overlay-controls">
-        <h1 style={{ color: "white" }}>FOORM</h1>
-        <input type="text" />
+        <label style={{ color: "white" }}>
+          <input
+            type="checkbox"
+            onChange={(event) => setLoopAnimation(event.target.checked)}
+          />
+          <span style={{ marginLeft: ".5rem" }}>Loop animation</span>
+        </label>
       </div>
       <div
         className="main-canvas"
