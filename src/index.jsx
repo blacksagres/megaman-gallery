@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import MainCanvas from "./components/main-canvas";
+import './styles/main.css';
 
-const App = () => {
-  return <h1>BEAUTIFUL APP</h1>
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<MainCanvas />, document.getElementById("app"));
