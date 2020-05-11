@@ -6,13 +6,12 @@ export default function MainCanvas() {
   const [app] = useState(
     new PIXI.Application({
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
     })
   );
 
   // https://pixijs.io/examples/index.html?s=basics&f=spritesheet.js&title=SpriteSheet%20Animation#/sprite/animatedsprite-jet.js
   const createMegamanSheet = () => {
-
     const frames = [];
 
     for (var i = 0; i <= 12; i++) {
@@ -48,14 +47,27 @@ export default function MainCanvas() {
   };
 
   useEffect(() => {
-    app.loader.add('../sprites/megaman-x/megaman-x-start-stage.json');
+    app.loader.add("../sprites/megaman-x/megaman-x-start-stage.json");
     app.loader.load(doneLoading);
   }, []);
 
-  const appendCanvas = div => {
+  const appendCanvas = (div) => {
     if (!div) return;
     div.appendChild(app.view);
   };
 
-  return <div className="main-canvas" ref={appendCanvas} />;
+  return (
+    <>
+      <div id="overlay-controls">
+        <h1 style={{ color: "white" }}>FOORM</h1>
+        <input type="text" />
+      </div>
+      <div
+        className="main-canvas"
+        style={{ position: "absolute" }}
+        ref={appendCanvas}
+      />
+      ;
+    </>
+  );
 }
