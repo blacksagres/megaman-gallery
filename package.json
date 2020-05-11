@@ -1,0 +1,18 @@
+{
+  "name": "megaman-gallery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/blacksagres/megaman-gallery.git",
+  "author": "Blacksagres <geraldo.nogueirabs@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
