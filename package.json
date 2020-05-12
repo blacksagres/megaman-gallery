@@ -6,15 +6,13 @@
   "author": "Blacksagres <geraldo.nogueirabs@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "pixi.js": "^5.2.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "pixi.js": "^5.2.4"
   },
   "staticFiles": {
     "outDirPattern": "**/dist",
     "staticPath": "/src/assets",
     "watcherGlob": "**"
-},
+  },
   "scripts": {
     "dev": "parcel index.html"
   },
