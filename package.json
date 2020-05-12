@@ -14,7 +14,8 @@
     "watcherGlob": "**"
   },
   "scripts": {
-    "dev": "parcel index.html"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
