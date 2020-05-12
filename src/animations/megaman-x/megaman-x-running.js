@@ -29,7 +29,8 @@ export const megamanXRunning = (pixiApp) => {
       resolve(sectionSprite);
     };
 
-    pixiApp.loader.add("../../sprites/megaman-x/megaman-x-running.json");
+    const resource = "../../sprites/megaman-x/megaman-x-running.json";
+    if (!pixiApp.loader.resources[resource]) pixiApp.loader.add(resource);
     pixiApp.loader.load(doneLoading);
   });
 };
