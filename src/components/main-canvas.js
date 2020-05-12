@@ -10,12 +10,29 @@ export default function MainCanvas() {
     view: document.querySelector("#main-canvas"),
   });
 
-  megamanXStartStage(app).then((animation) => {
-    document
-      .querySelector("#control-animation-loop")
-      .addEventListener("change", (event) => {
-        animation.loop = event.target.checked;
-        animation.play();
-      });
-  });
+  document
+    .querySelector("#animation-select")
+    .addEventListener("change", (event) => {
+      if (app.stage.children.length) app.stage.removeChildAt(0);
+      const { value } = event.target;
+
+      const appendEventsToAnimation = (animation) => {
+        document
+          .querySelector("#control-animation-loop")
+          .addEventListener("change", (event) => {
+            animation.loop = event.target.checked;
+            animation.play();
+          });
+      };
+
+      switch (value) {
+        case "megaman-x-running": {
+          megamanXRunning(app).then(appendEventsToAnimation);
+          break;
+        }
+        case "megaman-x-starting": {
+          megamanXStartStage(app).then(appendEventsToAnimation);
+        }
+      }
+    });
 }
