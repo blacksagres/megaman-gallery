@@ -8,13 +8,17 @@
 <body>
 <div id="app">
   <div id="overlay-controls">
-    <label style="color: white;">
+    <label class="control">
       <input
               id="control-animation-loop"
               type="checkbox"
       />
       <span style="margin-left: .5rem">Loop animation</span>
     </label>
+    <select  class="control" id="animation-select">
+      <option value="megaman-x-running">X is running</option>
+      <option value="megaman-x-starting">X is starting</option>
+    </select>
   </div>
   <div>
     <canvas id="main-canvas" />

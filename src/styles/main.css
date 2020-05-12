@@ -5,10 +5,17 @@
 
 body {
   overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #overlay-controls {
-  position: fixed; /* Sit on top of the page content */
+  background-color: darkred;
+  color: white;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   padding: 1rem;
@@ -19,4 +26,20 @@ body {
    /* Black background with opacity */
   /* background-color: rgba(0,0,0,0.5); */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+#overlay-controls .control{
+  margin-right: .5rem;
+  padding: .5rem;
+}
+
+#overlay-controls select.control{
+  padding: .5rem;
+  color: white;
+  background-color: darkred;
+}
+
+#overlay-controls select.control option{
+  padding: .5rem;
+  background-color: darkred;
 }
