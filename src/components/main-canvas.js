@@ -25,6 +25,7 @@ export default function MainCanvas() {
   }
 
   window.addEventListener("resize", resize);
+  window.addEventListener("orientationchange", resize);
 
   const appendEventsToAnimation = (animation) => {
     animation.loop = document.querySelector("#control-animation-loop").checked;

@@ -11,15 +11,17 @@
   </head>
   <body>
     <div id="overlay-controls">
-      <label class="control">
-        <input id="control-animation-loop" type="checkbox" />
-        <span style="margin-left: 0.5rem;">Loop animation</span>
-      </label>
-      <select class="control" id="animation-select">
-        <option value="megaman-x-running">X is running</option>
-        <option value="megaman-x-starting">X is starting</option>
-      </select>
-    </div>
+      <div class="control-bar">
+       <label class="control">
+         <input id="control-animation-loop" type="checkbox" />
+         <span style="margin-left: 0.5rem;">Loop animation</span>
+       </label>
+       <select class="control" id="animation-select">
+         <option value="megaman-x-running">X is running</option>
+         <option value="megaman-x-starting">X is starting</option>
+       </select>
+      </div>
+     </div>
     <canvas id="main-canvas" />
     <script src="src/index.js"></script>
   </body>
