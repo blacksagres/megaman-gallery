@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Megaman Gallery</title>
-</head>
-<body>
-<div id="app">
-  <div id="overlay-controls">
-    <label class="control">
-      <input
-              id="control-animation-loop"
-              type="checkbox"
-      />
-      <span style="margin-left: .5rem">Loop animation</span>
-    </label>
-    <select  class="control" id="animation-select">
-      <option value="megaman-x-running">X is running</option>
-      <option value="megaman-x-starting">X is starting</option>
-    </select>
-  </div>
-  <div>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- This prevents iOS from zooming when interacting with a <select> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Megaman Gallery</title>
+  </head>
+  <body>
+    <div id="overlay-controls">
+      <label class="control">
+        <input id="control-animation-loop" type="checkbox" />
+        <span style="margin-left: 0.5rem;">Loop animation</span>
+      </label>
+      <select class="control" id="animation-select">
+        <option value="megaman-x-running">X is running</option>
+        <option value="megaman-x-starting">X is starting</option>
+      </select>
+    </div>
     <canvas id="main-canvas" />
-  </div>
-</div>
-<script src="src/index.js"></script>
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>
