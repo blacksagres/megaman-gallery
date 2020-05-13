@@ -1,4 +1,4 @@
 import MainCanvas from './components/main-canvas';
-import './styles/main.css';
+import './styles/main.scss';
 
 MainCanvas();
