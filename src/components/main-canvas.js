@@ -10,9 +10,24 @@ export default function MainCanvas() {
     view: document.querySelector("#main-canvas"),
   });
 
+  // Resize function window
+  const resize = () =>{
+    if(!app.stage.children.length) return; 
+
+    // Resize the renderer
+    const currentSprite = app.stage.getChildAt(0);
+    
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    // You can use the 'screen' property as the renderer visible
+    // area, this is more useful than view.width/height because
+    // it handles resolution
+    currentSprite.position.set(app.screen.width / 2, app.screen.height / 2);
+  }
+
+  window.addEventListener("resize", resize);
+
   const appendEventsToAnimation = (animation) => {
-    animation.loop = document
-      .querySelector("#control-animation-loop").checked;
+    animation.loop = document.querySelector("#control-animation-loop").checked;
 
     document
       .querySelector("#control-animation-loop")
@@ -33,14 +48,14 @@ export default function MainCanvas() {
         megamanXStartStage(app).then(appendEventsToAnimation);
       }
     }
-  }
+  };
 
-  initializeAnimation(document.querySelector('#animation-select').value);
-  
+  initializeAnimation(document.querySelector("#animation-select").value);
+
   document
     .querySelector("#animation-select")
     .addEventListener("change", (event) => {
       const { value } = event.target;
-      initializeAnimation(value);     
+      initializeAnimation(value);
     });
 }
