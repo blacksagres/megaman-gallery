@@ -11,28 +11,29 @@ export default function MainCanvas() {
   });
 
   // Resize function window
-  const resize = () =>{
-    if(!app.stage.children.length) return; 
+  const resize = () => {
+    if (!app.stage.children.length) return;
 
     // Resize the renderer
     const currentSprite = app.stage.getChildAt(0);
-    
+
     app.renderer.resize(window.innerWidth, window.innerHeight);
     // You can use the 'screen' property as the renderer visible
     // area, this is more useful than view.width/height because
     // it handles resolution
     currentSprite.position.set(app.screen.width / 2, app.screen.height / 2);
-  }
+  };
 
   window.addEventListener("resize", resize);
   window.addEventListener("orientationchange", resize);
 
   const appendEventsToAnimation = (animation) => {
-
     // https://pixijs.download/dev/docs/PIXI.AnimatedSprite.html
-    document
-    .querySelector("#control-animation-repeat")
-    .addEventListener("click", () => {
+    const repeatAnimationButton = document.querySelector(
+      "#control-animation-repeat"
+    );
+
+    repeatAnimationButton.addEventListener("click", () => {
       animation.gotoAndPlay(0);
     });
 
@@ -40,6 +41,11 @@ export default function MainCanvas() {
     document
       .querySelector("#control-animation-loop")
       .addEventListener("change", (event) => {
+        const checked = event.target.checked;
+
+        if (checked) repeatAnimationButton.classList.add("invisible");
+        else repeatAnimationButton.classList.remove("invisible");
+
         animation.loop = event.target.checked;
         animation.play();
       });
