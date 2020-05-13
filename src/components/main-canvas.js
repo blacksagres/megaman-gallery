@@ -28,8 +28,15 @@ export default function MainCanvas() {
   window.addEventListener("orientationchange", resize);
 
   const appendEventsToAnimation = (animation) => {
-    animation.loop = document.querySelector("#control-animation-loop").checked;
 
+    // https://pixijs.download/dev/docs/PIXI.AnimatedSprite.html
+    document
+    .querySelector("#control-animation-repeat")
+    .addEventListener("click", () => {
+      animation.gotoAndPlay(0);
+    });
+
+    // TODO: stop on specific frame?
     document
       .querySelector("#control-animation-loop")
       .addEventListener("change", (event) => {
