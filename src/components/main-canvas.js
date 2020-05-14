@@ -33,22 +33,27 @@ export default function MainCanvas() {
       "#control-animation-repeat"
     );
 
+    const loopAnimationCheckbox = document.querySelector(
+      "#control-animation-loop"
+    );
+
+    // keep the loop toggle if animations change
+    animation.loop = loopAnimationCheckbox.checked;
+
     repeatAnimationButton.addEventListener("click", () => {
       animation.gotoAndPlay(0);
     });
 
     // TODO: stop on specific frame?
-    document
-      .querySelector("#control-animation-loop")
-      .addEventListener("change", (event) => {
-        const checked = event.target.checked;
+    loopAnimationCheckbox.addEventListener("change", (event) => {
+      const checked = event.target.checked;
 
-        if (checked) repeatAnimationButton.classList.add("invisible");
-        else repeatAnimationButton.classList.remove("invisible");
+      if (checked) repeatAnimationButton.classList.add("invisible");
+      else repeatAnimationButton.classList.remove("invisible");
 
-        animation.loop = event.target.checked;
-        animation.play();
-      });
+      animation.loop = event.target.checked;
+      animation.play();
+    });
   };
 
   const initializeAnimation = (animationName) => {
