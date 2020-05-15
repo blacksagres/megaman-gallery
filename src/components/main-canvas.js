@@ -8,6 +8,7 @@ export default function MainCanvas() {
     height: window.innerHeight,
     width: window.innerWidth,
     view: document.querySelector("#main-canvas"),
+    transparent: true
   });
 
   // Resize function window
