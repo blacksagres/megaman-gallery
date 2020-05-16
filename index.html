@@ -10,7 +10,7 @@
     <title>Megaman Gallery</title>
   </head>
   <body>
-    <a id="menu-toggle">
+    <a class="menu-button" id="menu-toggle">
       <div></div>
       <div></div>
       <div></div>
@@ -21,9 +21,6 @@
           <input id="control-animation-loop" type="checkbox" />
           <span style="margin-left: 0.5rem;">Loop</span>
         </label>
-        <button class="button violet" id="control-animation-repeat">
-          Restart animation
-        </button>
         <select class="control" id="animation-select">
           <option value="megaman-x-running">X is running</option>
           <option value="megaman-x-starting">X is starting</option>
@@ -31,6 +28,9 @@
         <button id="close-controls-panel">X</button>
       </div>
     </div>
+    <a class="menu-button" id="control-animation-repeat">
+      <span role="img">🔁</span>
+    </a>
     <canvas id="main-canvas" />
     <script src="src/index.js"></script>
   </body>
