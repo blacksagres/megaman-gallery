@@ -10,15 +10,18 @@
     <title>Megaman Gallery</title>
   </head>
   <body>
+    <!-- Hamburger menu -->
     <a class="menu-button" id="menu-toggle">
       <div></div>
       <div></div>
       <div></div>
     </a>
+    <!-- Repeat button -->
     <a class="menu-button" id="control-animation-repeat">
       <img src="./dist/icons/repeat-icon.svg" alt="repeat-icon" />
     </a>
 
+    <!-- Overlay panel with settings -->
     <div id="overlay">
       <div class="controls-panel">
         <div class="control-wrapper">
@@ -28,17 +31,21 @@
           </label>
         </div>
         <div class="control-wrapper">
-          <select class="control" id="game-select" />
+          <label for="game-select">
+            <span>Game:</span>
+            <select class="control" id="game-select" />
+          </label>
         </div>
         <div class="control-wrapper">
-          <select class="control" id="animation-select">
-            <option value="megaman-x-running">X is running</option>
-            <option value="megaman-x-starting">X is starting</option>
-          </select>
+          <label for="animation-select">
+            <span>Animation:</span>
+            <select class="control" id="animation-select">
+              <option value="megaman-x-running">X is running</option>
+              <option value="megaman-x-starting">X is starting</option>
+            </select>
+          </label>
         </div>
-        <div class="control-wrapper">
-          <button id="close-controls-panel">CLOSE</button>
-        </div>
+        <button id="close-controls-panel">CLOSE</button>
       </div>
     </div>
     <canvas id="main-canvas" />
