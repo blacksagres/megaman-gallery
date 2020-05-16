@@ -4,6 +4,8 @@
   text-decoration: none;
   display: block;
 
+  color: white;
+
   cursor: pointer;
   position: absolute;
 
@@ -27,23 +29,24 @@
   &:active {
     box-shadow: none;
     outline: 0;
+    -webkit-transform: translateY(3px);
     transform: translateY(3px);
   }
 }
 
 .menu-button#control-animation-repeat {
-  span {
-    display: inline-block;
-    transform: scale(2.5);
-    margin: 1.8rem;
+  // the svg icon
+  img {
+    height: 3rem;
+    margin-left: 1rem;
+    margin-top: .6rem;
 
     @include for-phone-only {
-      transform: translate(60%, 60%) scale(1.5);
-      margin: 0;
+      height: 2rem;
+      margin-left: .5rem;
+      margin-top: .3rem;
     }
   }
-
-  
 }
 
 .menu-button#menu-toggle {
