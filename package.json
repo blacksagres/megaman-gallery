@@ -6,6 +6,7 @@
   "author": "Blacksagres <geraldo.nogueirabs@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "gsap": "^3.2.6",
     "pixi.js": "^5.2.4"
   },
   "staticFiles": {
