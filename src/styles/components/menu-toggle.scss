@@ -12,6 +12,7 @@
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
+  z-index: 2;
 
   background-color: $base-violet;
   box-shadow: 0 3px 5px rgba($color: $base-purple, $alpha: 1);
