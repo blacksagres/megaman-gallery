@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
-import { megamanXStartStage } from "../animations/megaman-x/megaman-x-start-stage";
-import { megamanXRunning } from "../animations/megaman-x/megaman-x-running";
+import { megamanXStartStage } from "../sprites/megaman-x/megaman-x-start-stage";
+import { megamanXRunning } from "../sprites/megaman-x/megaman-x-running";
 
 // https://www.piskelapp.com/p/agxzfnBpc2tlbC1hcHByEwsSBlBpc2tlbBiAgKC9_OjjCQw/edit
 export default function MainCanvas() {
