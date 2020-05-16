@@ -1,6 +1,7 @@
 import { gsap, Power3 } from "gsap";
 
 const menuToggleButton = document.querySelector("#menu-toggle");
+const menuButtons = document.querySelectorAll(".menu-button");
 const controlsContainer = document.querySelector("#overlay");
 const closeControlsPanel = document.querySelector("#close-controls-panel");
 
@@ -13,7 +14,7 @@ closeControlsPanel.addEventListener("click", () => {
       duration: 0.3,
     })
     .fromTo(
-      menuToggleButton,
+      menuButtons,
       {
         translateY: "-10px",
       },
@@ -30,7 +31,7 @@ closeControlsPanel.addEventListener("click", () => {
 menuToggleButton.addEventListener("click", () => {
   gsap
     .timeline()
-    .to(menuToggleButton, {
+    .to(menuButtons, {
       opacity: 0,
       translateY: "-10px",
       ease: Power3.easeIn,
