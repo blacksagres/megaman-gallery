@@ -24,6 +24,7 @@ closeControlsPanel.addEventListener("click", () => {
         ease: Power3.easeIn,
         zIndex: 2,
         duration: 0.3,
+        clearProps: 'all'
       }
     );
 });
@@ -47,6 +48,7 @@ menuToggleButton.addEventListener("click", () => {
         translateY: "0px",
         opacity: 1,
         ease: Power3.easeIn,
+        clearProps: 'transform'
       }
     );
 });
