@@ -12,6 +12,11 @@
   border-radius: 50%;
   z-index: 2;
 
+  @include for-phone-only {
+    width: 3rem;
+    height: 3rem;
+  }
+
 }
 
 .menu-button#control-animation-repeat {
