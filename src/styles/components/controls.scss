@@ -1,26 +1,5 @@
 #close-controls-panel {
-  padding: .5rem 1rem;
   margin-top: 1rem;
-
-  border: 0;
-  text-decoration: none;
-  display: block;
-
-  color: white;
-
-  background-color: $base-violet;
-  box-shadow: 0 3px 5px rgba($color: $base-purple, $alpha: 1);
-
-  @include for-phone-only {
-    margin: 2rem auto 0 auto;
-  }
-
-  &:active {
-    box-shadow: none;
-    outline: 0;
-    -webkit-transform: translateY(3px);
-    transform: translateY(3px);
-  }
 }
 
 #overlay {
@@ -43,14 +22,6 @@
   }
 
   .controls-panel {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-
-    // @include for-phone-only {
-    //   flex-direction: column;
-    //   justify-content: center;
-    // }
 
     justify-content: center;
     border-radius: 10px;

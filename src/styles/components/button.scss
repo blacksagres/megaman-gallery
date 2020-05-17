@@ -1,0 +1,25 @@
+.button {
+  border: 0;
+  text-decoration: none;
+  display: block;
+
+  color: white;
+
+  cursor: pointer;
+
+  background-color: $base-violet;
+  box-shadow: 0 3px 5px rgba($color: $base-purple, $alpha: 1);
+
+  padding: .5rem 1rem;
+
+  &:hover {
+    background-color: $base-purple;
+  }
+
+  &:active {
+    box-shadow: none;
+    outline: 0;
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+}
