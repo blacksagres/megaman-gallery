@@ -29,10 +29,14 @@
     .control-wrapper {
       label {
 
+        input[type="checkbox"] {
+          width: 0;
+          height: 0;
+        }
 
-        span {
-          display: block;
-          margin-bottom: .5rem;
+        &.checkbox {
+          padding-left: 2rem;
+          position: relative;
         }
 
         select.control {
