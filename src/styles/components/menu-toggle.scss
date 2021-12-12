@@ -16,27 +16,25 @@
     width: 3rem;
     height: 3rem;
   }
-
 }
 
 .menu-button#control-animation-repeat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  span {
+    display: block;
 
-  // the svg icon
-  img {
-    height: 3rem;
-    margin-left: 1rem;
-    margin-top: .6rem;
+    font-size: 3rem;
 
     @include for-phone-only {
-      height: 2rem;
-      margin-left: .5rem;
-      margin-top: .3rem;
+      font-size: 2rem;
     }
   }
 }
 
 .menu-button#menu-toggle {
-
   top: 1rem;
   left: 1rem;
 
@@ -56,14 +54,13 @@
       border-top: 3px solid white;
       margin-top: 1rem;
     }
-
   }
 
   div:not(:first-child) {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 
     @include for-phone-only {
-      margin-top: .2rem;
+      margin-top: 0.2rem;
     }
   }
 }

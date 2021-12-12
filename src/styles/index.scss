@@ -1,10 +1,9 @@
-@import './tipography/megaman-x.scss';
-@import './variables/colors.scss';
-@import 'mixins.scss';
+@import "./variables/colors.scss";
+@import "mixins.scss";
 
-@import './components/button.scss';
-@import './components/checkbox.scss';
-@import './components/controls.scss';
-@import './components/menu-toggle.scss';
+@import "./components/button.scss";
+@import "./components/checkbox.scss";
+@import "./components/controls.scss";
+@import "./components/menu-toggle.scss";
 
-@import 'main.scss';
+@import "main.scss";
